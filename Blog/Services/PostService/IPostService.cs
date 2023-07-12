@@ -5,10 +5,9 @@ namespace Blog.Services.PostService
     public interface IPostService
     {
         Task<List<Post>> GetAllPosts();
-        //Task<Post?> GetPost(int id);
-
-        //Task<Post> AddPost(CreatePostRequest post);
-        //Task<Post> UpdatePost(int id, Post post);
-        //Task<Post> DeletePost(int id);
+        Task<Post?> GetPost(int id);
+        Task<Post> AddPost(Post post);
+        Task<Post?> UpdatePost(int id, Post post);
+        Task<Post?> DeletePost(int id);
     }
 }

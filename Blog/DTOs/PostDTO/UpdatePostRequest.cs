@@ -1,11 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Blog.Models
+namespace Blog.DTOs.PostDTO
 {
-    public class Post
+    public class UpdatePostRequest
     {
-        public int Id { get; set; }
+        [Required(ErrorMessage = "Id is required")]
+        public int? Id { get; set; }
 
         [Required(ErrorMessage = "Title is required")]
         [StringLength(100, ErrorMessage = "Title must be between 1 and 100 characters", MinimumLength = 1)]
@@ -14,8 +14,10 @@ namespace Blog.Models
         [Required(ErrorMessage = "Description is required")]
         public string Description { get; set; } = string.Empty;
 
-        public DateTime CreatedAt { get; set; }
+        [Required(ErrorMessage = "Created at is required")]
+        public DateTime? CreatedAt { get; set; }
 
-        public DateTime UpdatedAt { get; set; }
+        [Required(ErrorMessage = "Updated at is required")]
+        public DateTime? UpdatedAt { get; set; }
     }
 }
