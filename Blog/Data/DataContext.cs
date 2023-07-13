@@ -10,7 +10,7 @@
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseSqlServer("Server=localhost,1433;Database=sql-server-db;User Id=sa;Password=Pass@word;TrustServerCertificate=true;");
+            optionsBuilder.UseSqlServer("Server=db,1433;Database=sql-server-db;User Id=sa;Password=Pass@word;TrustServerCertificate=true;");
         }
 
         public DbSet<Post> Posts { get; set; }
